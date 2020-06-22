@@ -1,0 +1,31 @@
+.Card {
+    Width: 50%;
+    height: 500px;
+    background-color: #282c34;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 0 auto;
+    top: 200px;
+}
+
+.Card img {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 200px;
+}
+
+.Card p {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+    color: white;
+}
