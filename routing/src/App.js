@@ -3,19 +3,24 @@ import {BrowserRouter} from 'react-router-dom';
 import Dog from './Dog'
 import About from './About'
 import Contact from './Contact'
-import {Route, Switch, Link} from 'react-router-dom'
+import {Route, Switch, NavLink} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
         <nav>
-            <Link to="/dog">DOG</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/">About</Link>
+            <NavLink extact="true" activeClassName="active-link" to="/dog/r">Dog Render</NavLink>
+            <NavLink extact="true" activeClassName="active-link" to="/dog/c">Dog Component</NavLink>
+            <NavLink extact="true" activeClassName="active-link" to="/contact">Contact</NavLink>
+            <NavLink extact="true" activeClassName="active-link" to="/">About</NavLink>
         </nav>
         <Switch>
-            <Route extact path="/dog" component={Dog}/>
-            <Route extact path="/contact" component={Contact}/>
-            <Route extact path="/" component={About}/>
+            <Route extact="true" path="/dog/c" component={() => <Dog name='Biscuit'/>}/>
+            <Route extact="true" path="/dog/r" render={() => <Dog name='Biscuit'/>}/>
+            {/*using component creates multiple component instances*/}
+            {/*Using render updates the single instance*/}
+            <Route extact="true" path="/contact" component={Contact}/>
+            <Route extact="true" path="/" component={About}/>
+
         </Switch>
     </div>
   )
